@@ -179,9 +179,15 @@ Testing<-df[-inTrain,]
 M_LOG<-glm(veryhappy ~ democracy + gini + refugee + women_edu + pop_den + labour, data = Training, family = "binomial")
 summary(M_LOG)
 exp(cbind(M_LOG$coefficients, confint(M_LOG)))
+#TRAINING DATA
+confusionMatrix(table(predict(M_LOG, Training, type="response") >= 0.5,
+                      Training$veryhappy == 1))
+#TESTING DATA
 confusionMatrix(table(predict(M_LOG, Testing, type="response") >= 0.5,
                       Testing$veryhappy == 1))
 
+#GETTING CONFIDENCE INTERVALS
+cbind(M_LOG$coefficients,confint(M_LOG))
 
 
 
