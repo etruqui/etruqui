@@ -90,6 +90,7 @@ head(df)
 
 
 ```{r}
+#IGNORE THIS TONY
 #MODEL 1: LINEAR MODEL WITH ALL VARIABLES
 set.seed(56)
 
@@ -112,6 +113,7 @@ RMSE_BASE
 
 
 ```{r}
+#IGNORE THIS TONY
 ##Practice splitting into train/test sets
 trainSize<-round(nrow(df)*0.7)
 testSize<-nrow(df)-trainSize
@@ -198,6 +200,7 @@ cbind(M_LOG$coefficients,confint(M_LOG))
 ```
 
 ```{r}
+#TONY, IGNORE THIS
 #CLASSIFICATION MODEL
 ###
 
